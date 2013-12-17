@@ -1,0 +1,1 @@
+void boilerplateStart(FILE *pos);

@@ -1,0 +1,59 @@
+.x-tree{
+    background-color: #FFA07A;
+}
+
+.x-tree .level{
+	text-align: center;
+	margin: -21px;
+}
+
+.x-tree .wood{
+    color: #A62B1F;
+    background-color: black;
+}
+
+.x-tree .leaf{
+	color: #00FF00;
+	background-color: green;
+	letter-spacing: 0px;
+}
+
+.x-tree .tinsel_blue{
+	color: blue;
+	letter-spacing: 0px;
+	margin: -4px;
+}
+
+.x-tree .tinsel_red{
+	color: red;
+	letter-spacing: 0px;
+	margin: -4px;
+}
+
+.x-tree .tinsel_yellow{
+	color: yellow;
+	letter-spacing: 0px;
+	margin: -4px;
+}
+
+.x-tree .globe_blue{
+	color: blue;
+	letter-spacing: 0px;
+	margin: -4px;
+}
+
+.x-tree .globe_red{
+	color: red;
+	letter-spacing: 0px;
+	margin: -4px;
+}
+
+.x-tree .globe_yellow{
+	color: yellow;
+	letter-spacing: 0px;
+	margin: -4px;
+}
+
+.x-tree .cross{
+    color: yellow;
+}
