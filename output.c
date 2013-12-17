@@ -66,29 +66,6 @@ char *content(int x, char *c, int type){
 }
 
 char *generateRandom(char *random, char *c){
-		/*int number1, number2;
-		srand(time(NULL));
-		number1 = (rand() % 10 + 1 );
-		if (number1 == 10){
-			*random = (char *)malloc(6 * sizeof(char));
-			srand(time(NULL));
-			number2 = (rand() % 3 + 1 );
-			switch(number2){
-				case 1:
-					strcpy(random, "{ $ }");
-					break;
-				case 2:
-					strcpy(random, "{ € }");
-					break;
-				case 3:
-					strcpy(random, "{ £ }");
-					break;
-			}
-		}
-		else
-			*random = (char *)malloc(2 * sizeof(char));
-			strcpy(random, c);
-	*/
 	return &random[0];
 }
 
