@@ -6,7 +6,7 @@
 
 
 void generateLevel(int x, FILE *pos, char *type){
-	int t;
+	int t, random;
 	if (strcmp(type, "body") == 0)
 		t = 1;
 	
@@ -15,6 +15,8 @@ void generateLevel(int x, FILE *pos, char *type){
 
 	else if (strcmp(type, "wood") == 0)
 		t = 3;
+	else if (strcmp(type,"bodyTinsel") == 0)
+		t = 4;
 
 	writeStartLevel(pos);
 	switch(t){
@@ -23,6 +25,25 @@ void generateLevel(int x, FILE *pos, char *type){
 				fputs(content(x, "#", 1), pos);
 			fputs(endEl("span"), pos);
 			break;
+
+		case 4:
+			random = rand() % 3 + 1;
+			switch(random){
+				case 1:
+					fputs(startEl("span", "tinsel_blue"), pos);
+					break;
+				case 2:
+					fputs(startEl("span", "tinsel_red"), pos);
+					break;
+				case 3:
+					fputs(startEl("span", "tinsel_yellow"), pos);
+					break;
+			}
+				fputs(content(x, "#", 0), pos);
+			fputs(endEl("span"), pos);
+			
+			break;
+
 		case 2:
 			fputs(startEl("span", "cross"), pos);
 				fputs("▲", pos);
@@ -58,6 +79,7 @@ void writeEndLevel(FILE *pos){
 char *content(int x, char *c, int type){
 	char *kontent = (char *)malloc((x + 1) * sizeof(char));
 	strcpy(kontent, "");
+	
 	while(x){
 		strcat(kontent, c);
 		x--;
@@ -65,8 +87,20 @@ char *content(int x, char *c, int type){
 	return &kontent[0];
 }
 
-char *generateRandom(char *random, char *c){
-	return &random[0];
+void *generateRandom(char *random){
+	int r = rand() % 3 + 1;
+	switch (r){
+		case 1:
+			strcpy(random, "{ $ }");
+			break;
+		case 2:
+			strcpy(random, "{ ^ }");
+			break;
+		case 3:
+			strcpy(random, "{ # }");
+			break;
+
+	}
 }
 
 char *startEl(char *type, char *klass){

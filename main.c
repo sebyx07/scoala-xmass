@@ -12,6 +12,7 @@ int generate(int level, float magnitude){
 	pos = fopen("output.html", "w");
 
 	float x = 1;
+	int random, reduce = 1 ,count = 0;
 	int i, max = 60, min = 13;
 	
 	boilerplateStart(pos);
@@ -19,14 +20,27 @@ int generate(int level, float magnitude){
 	for(i = 1; i <= level; i++){
 		while(ceil(x * magnitude) < max){
 			x = ceil(x *magnitude);
-			generateLevel(x, pos, "body");
-		}
+			random = rand() % 3 + 1;
+			if (random == 3 && reduce == 0){
+					generateLevel(x, pos, "bodyTinsel");
+					reduce = 1;
+			}
+			else{			
+				generateLevel(x, pos, "body");
+				if (reduce == 1 && count < 1)
+					count++;
+				else if (count == 1){
+					count = 0;
+					reduce = 0;
+				}
+			}	
+		}	
 		x = min;
 		min += 8;
 		max += 20;
 	}
 	for(i = 1; i <= 10; i++)
-		generateLevel(10, pos, "wood");	
+		generateLevel(9, pos, "wood");	
 	boilerplateEnd(pos);
 	fclose(pos);
 	return 0;

@@ -19,21 +19,21 @@
 }
 
 .x-tree .tinsel_blue{
-	color: blue;
+	color: #0000FF;
+	background-color: #000099;
 	letter-spacing: 0px;
-	margin: -4px;
 }
 
 .x-tree .tinsel_red{
-	color: red;
+	color: #B22222;
 	letter-spacing: 0px;
-	margin: -4px;
+	background-color: #DC143C;
 }
 
 .x-tree .tinsel_yellow{
-	color: yellow;
+	color: #FF8C00;
 	letter-spacing: 0px;
-	margin: -4px;
+	background-color: #FFD700;
 }
 
 .x-tree .globe_blue{
